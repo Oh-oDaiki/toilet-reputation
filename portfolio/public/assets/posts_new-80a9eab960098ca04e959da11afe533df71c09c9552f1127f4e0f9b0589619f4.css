@@ -1,0 +1,18 @@
+.new_title{
+    text-align: center;
+    margin-bottom:50px;
+}
+.new_content{
+    text-align: center;
+    margin-bottom:50px;
+}
+.new_submit {
+    text-align: center;
+    padding-left: 45%;
+    
+}   
+
+
+textarea{
+    width: 50%;
+}

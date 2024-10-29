@@ -1,0 +1,32 @@
+.show-list{
+    margin:20px;
+    padding:10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.user-link{
+    text-decoration: none;
+    color: blue;
+}
+
+.edit-link a {
+    display: inline;
+    padding: 10px 20px;
+    margin:5px;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+
+}
+
+.back-link a {
+    display: inline;
+    padding: 10px 20px;
+    margin:5px;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}

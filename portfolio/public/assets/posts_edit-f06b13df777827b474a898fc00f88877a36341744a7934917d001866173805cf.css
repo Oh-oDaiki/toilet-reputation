@@ -1,0 +1,20 @@
+
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-link a {
+    color: aqua;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-link a:hover {
+    background-color: darkblue;
+}

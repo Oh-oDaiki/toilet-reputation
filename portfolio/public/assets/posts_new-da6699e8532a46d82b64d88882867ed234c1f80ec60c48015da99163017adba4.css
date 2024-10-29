@@ -1,0 +1,27 @@
+.new_title{
+    text-align: center;
+    margin-bottom:50px;
+}
+.new_content{
+    text-align: center;
+    margin-bottom:50px;
+}
+.new_submit {
+    text-align: center;
+    padding-left: 45%;
+    
+}   
+
+.new_submit input{
+    padding:10px 20px;
+    text-decoration: none;
+    border-radius:5px;
+    transition: background-color 1s;
+    background-color: green;
+    color: white;
+}
+
+
+textarea{
+    width: 50%;
+}

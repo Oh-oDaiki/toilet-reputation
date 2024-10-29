@@ -1,0 +1,5 @@
+<h1>ユーザーID:<%=current_user.id%></br>ユーザーネーム:<%=current_user.username%></h1>
+
+<% if @user == current_user %>
+    <%= link_to  "Edit", edit_user_path(@user) %>
+<%end%>

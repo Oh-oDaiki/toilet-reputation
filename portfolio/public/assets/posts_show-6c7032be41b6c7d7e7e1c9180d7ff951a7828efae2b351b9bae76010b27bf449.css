@@ -1,0 +1,44 @@
+.show-list{
+    margin:20px;
+    padding:10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.user-link{
+    text-decoration: none;
+    color: blue;
+}
+
+
+.back-link a , .edit-link a{
+    display: inline-block;
+    padding: 10px 20px;
+    margin:5px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.back-link a {
+    background-color: lightblue;
+    transition: 1s;
+}
+
+.edit-link a {
+    background-color: lightgreen;
+    transition: 1s;
+}
+
+.back-link a:hover{
+    background-color: darkblue;
+}
+
+.edit-link a:hover{
+    background-color: darkgreen;
+    
+}
+
+.links{
+    display: flex;
+}

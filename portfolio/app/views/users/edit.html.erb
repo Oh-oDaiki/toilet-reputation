@@ -1,0 +1,11 @@
+<h1>ユーザーネーム変更画面</h1>
+<%= form_with model: @user do |form| %>
+<div class="new_title">
+    <%= form.label :name %>
+    <%= form.text_field :username %>
+</div>
+<div class="new_submit">
+    <%= form.submit %>
+</div>
+<% end %>
+<%= link_to  "Back", user_path %>

@@ -1,0 +1,92 @@
+/* 全体のスタイル */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* ヘッダーのスタイル */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header .new-post-link {
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.header .new-post-link:hover {
+    background-color: #0056b3;
+}
+
+/* 投稿リストのスタイル */
+.post-list {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0;
+    list-style: none;
+}
+
+/* 各投稿のスタイル */
+.post-item {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.post-item:hover {
+    transform: scale(1.02);
+}
+
+/* 投稿のリンクのスタイル */
+.post-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 投稿のタイトルと内容のスタイル */
+.post-title {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.post-content {
+    color: #666;
+}
+
+/* 削除ボタンのスタイル */
+.delete-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}

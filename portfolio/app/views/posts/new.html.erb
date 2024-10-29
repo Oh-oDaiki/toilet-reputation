@@ -1,0 +1,40 @@
+<%= stylesheet_link_tag "posts_new.css", :media => "all" %>
+<h1>新規投稿画面</h1>
+
+<% if flash.now[:danger] %>
+      <div class="alert alert-danger">
+        <%= flash.now[:danger] %>
+      </div>
+<% end %>
+
+<div class="new-form">
+  <%= form_with model: @post do |form| %>
+    <div class="new_title">
+      <%= form.label :場所  %>
+      <%= form.text_field :title %>
+    </div>
+    <div class="new_image">
+      <%= form.label :画像 %>
+      <%= form.file_field :image, accept: "image/*" %>
+    </div>
+    <div class="new_content">
+      <%= form.label :詳細 %>
+      <%= form.text_area :content %>
+    </div>
+    
+    <div class="new_rating">
+      <%= form.fields_for :ratings do |rating_form| %>
+          <%= rating_form.label :value, "星評価" %>
+          <%= rating_form.select :value, 1..5 %>
+      <% end %>
+    </div>
+
+  <div class="new_submit">
+    <%= form.submit "投稿" %>
+  </div>
+
+  <% end %>
+</div>
+<div class="back-link">
+    <%= link_to "Back", posts_path %>
+</div>

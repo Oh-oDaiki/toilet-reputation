@@ -1,0 +1,41 @@
+<%= stylesheet_link_tag "posts_show.css", :media => "all" %>
+
+<div class="show-list">
+  <% if @post.user == current_user %>
+    <%= link_to user_path(@post.user), class: "user-link" do %>
+      <h3>投稿ID: <%= @post.id %> | ユーザーネーム: <%= @post.user.username %></h3>
+    <% end %>
+  <% else %>
+    <h3>ID: <%= @post.id %> | ユーザーネーム: <%= @post.user.username %></h3>
+  <% end %>
+
+  <h1><%= @post.title %></h1>
+
+  <% if @post.ratings.any? %>
+    <% @post.ratings.each do |rating| %>
+      <h2>評価 ※(⭐️1~⭐️5)</br>⭐️<%= rating.value %></h2>
+    <% end %>
+  <% else %>
+    <p>まだ評価はありません。</p>
+  <% end %>
+
+  <h2>コメント</h2>
+  <p><%= @post.content %></p>
+
+  <% if @post.image.attached? %>
+    <h2>画像</h2>
+    <%= image_tag @post.image %>
+  <% end %>
+
+<div class="links">
+  <div class ="edit-link">
+    <% if @post.user == current_user %>
+        <%= link_to "Edit", edit_post_path(@post) %>
+    <% end %>
+  </div>
+
+  <div class="back-link">
+    <%= link_to "Back", posts_path %>
+  </div>
+</div>
+

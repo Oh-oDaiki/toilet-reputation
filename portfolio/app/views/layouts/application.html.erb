@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Board</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div class="header">
+        <h1>
+        <% if @user==current_user %>
+          <%= link_to "投稿一覧", posts_path, class: "index-post-link" %><span> | </span>
+        <% else %>
+          <%= link_to "投稿一覧", new_user_session_path, class: "index-post-link" %><span> | </span>
+        <% end %>
+        
+        <%= link_to "新規投稿", new_post_path, class: "new-post-link" %><span> | </span>
+
+        <% if @user==current_user %>
+          <%= link_to "ユーザー編集", edit_user_path(@user), class: "edit-user-link" %>
+        <% else %>
+          <%= link_to "ユーザー編集", new_user_session_path, class: "edit-user-link" %>
+        <% end %>
+        </h1>
+
+        <h1><%= button_to "ログアウト",  destroy_user_session_path , class: "logout-link", method: :delete %></h1>
+    </div>
+
+    
+    <% flash.each do |message_type, message| %>
+      <div class="flash_message <%= message_type %>"><%= message %></div>
+    <% end %>
+    
+    <%= yield %>
+  </body>
+</html>

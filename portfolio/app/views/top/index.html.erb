@@ -1,0 +1,23 @@
+<%=stylesheet_link_tag "top_index.css", :media=>"all"%>
+<div class="top_logo">
+    <h1><span class="blue">W</span><span class="black">.</span><span class="red">C</span><span class="black">.</span></h1>
+</div>
+
+
+<div class="image_logo">
+  <% if user_signed_in?%>
+    <%= link_to posts_path do %>
+      <p>↓Enter from here↓</p>
+      <%= image_tag 'WC.png', size: '250x250' %>
+    <% end %>
+  <% else %>
+    <%= link_to new_user_session_path do %>
+      <p>↓Enter from here↓</p>
+      <%= image_tag 'WC.png', size: '250x250' %>
+    <% end %>
+  <%end%>
+</div>
+
+<div class="sub_logo">
+   <h2>~beauty of toilet~</h2>
+</div>

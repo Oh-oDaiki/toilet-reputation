@@ -1,0 +1,43 @@
+.edit-list{
+    text-align: center;
+    margin:20px;
+    padding:10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.new_title{
+    margin-bottom: 10px;
+}
+
+.new_content{
+    margin-bottom: 10px;
+}
+
+.new_submit input{
+    padding:10px 20px;
+    text-decoration: none;
+    border-radius:5px;
+    transition: background-color 1s;
+    background-color: green;
+    color: white;
+}
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-link a {
+
+    background-color: aqua;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 1s;
+}
+
+.back-link a:hover {
+    background-color: darkblue;
+}

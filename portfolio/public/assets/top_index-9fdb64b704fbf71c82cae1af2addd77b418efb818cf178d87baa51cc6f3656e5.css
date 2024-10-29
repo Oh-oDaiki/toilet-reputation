@@ -1,0 +1,33 @@
+
+.top_logo {
+    text-align: center; /* 中央揃え */
+}
+
+.top_logo {
+    font-size: 70px; /* フォントサイズ */
+}
+
+.top_logo .blue {
+    color: blue; /* Wの文字色を青にする */
+}
+
+.top_logo .red {
+    color: red; /* Cの文字色を赤にする */
+}
+.top_logo .black{
+    color: black;
+}
+
+.sub_logo{
+    color: lightseagreen;
+    font-size: 50px;
+    font-family: 'Sacramento', cursive;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.image_logo{
+
+    text-align: center;
+    
+}
