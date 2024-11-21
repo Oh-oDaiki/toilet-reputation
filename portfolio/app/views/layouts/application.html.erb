@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <div class="header">
+    <article class="header">
         <h1>
         <% if @user==current_user %>
           <%= link_to "投稿一覧", posts_path, class: "index-post-link" %><span> | </span>
@@ -29,7 +29,7 @@
         </h1>
 
         <h1><%= button_to "ログアウト",  destroy_user_session_path , class: "logout-link", method: :delete %></h1>
-    </div>
+    </article>
 
     
     <% flash.each do |message_type, message| %>
