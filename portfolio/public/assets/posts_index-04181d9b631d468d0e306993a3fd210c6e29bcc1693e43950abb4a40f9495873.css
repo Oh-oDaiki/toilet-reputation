@@ -1,0 +1,67 @@
+.post-list {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0;
+  list-style: none;
+}
+
+.post-item {
+  background-color: white;
+  margin: 10px 0;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  box-shadow: 5px 1px 1px gray;
+  transition: box-shadow 0.2s;
+}
+
+.post-item:active {
+  box-shadow: none;
+  position: relative;
+  top: 5px;
+}
+
+img {
+  width: 200px;
+  height: 215px;
+}
+
+.post-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-title {
+  font-size: 1.5em;
+  color: black;
+}
+
+.post-content {
+  color: gray;
+}
+
+.delete-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
+
+.leaflet-container {
+  margin: auto 0;
+}
+
+#map {
+  width: 500px;
+  height: 500px;
+}

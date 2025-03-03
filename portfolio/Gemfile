@@ -72,3 +72,7 @@ group :test do
 end
 
 gem "devise"
+
+gem 'leaflet-rails'
+gem 'importmap-rails'
+gem 'stimulus-rails'

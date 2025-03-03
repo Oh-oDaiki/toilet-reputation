@@ -8,34 +8,34 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   </head>
 
   <body>
-    <article class="header">
-        <h1>
-        <% if @user==current_user %>
-          <%= link_to "投稿一覧", posts_path, class: "index-post-link" %><span> | </span>
-        <% else %>
-          <%= link_to "投稿一覧", new_user_session_path, class: "index-post-link" %><span> | </span>
+    <header>
+      <h1>
+        <%= link_to "投稿一覧", posts_path, class: "index-post-link" %>
+        <% if user_signed_in? %>
+          <span> | </span><%= link_to "新規投稿", new_post_path, class: "new-post-link" %><span> | </span>
+
+          <% if @user==current_user %>
+            <%= link_to "ユーザー編集", edit_user_path(@user), class: "edit-user-link" %>
+          <% end %>
         <% end %>
-        
-        <%= link_to "新規投稿", new_post_path, class: "new-post-link" %><span> | </span>
+      </h1>
+      <% if user_signed_in? %>
+      <h1><%= button_to "ログアウト",  destroy_user_session_path , class: "logout-link", method: :delete %></h1>
+      <% else %>
+      <%= link_to "ログイン", new_user_session_path, class:"login-link" %>
+      <% end %>
+    </header>
 
-        <% if @user==current_user %>
-          <%= link_to "ユーザー編集", edit_user_path(@user), class: "edit-user-link" %>
-        <% else %>
-          <%= link_to "ユーザー編集", new_user_session_path, class: "edit-user-link" %>
-        <% end %>
-        </h1>
-
-        <h1><%= button_to "ログアウト",  destroy_user_session_path , class: "logout-link", method: :delete %></h1>
-    </article>
-
-    
-    <% flash.each do |message_type, message| %>
-      <div class="flash_message <%= message_type %>"><%= message %></div>
-    <% end %>
-    
-    <%= yield %>
+    <main>
+      <% flash.each do |message_type, message| %>
+        <div class="flash_message <%= message_type %>"><%= message %></div>
+      <% end %>
+      
+      <%= yield %>
+    </main>
   </body>
 </html>

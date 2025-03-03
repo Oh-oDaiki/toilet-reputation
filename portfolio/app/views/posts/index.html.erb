@@ -1,28 +1,36 @@
-<%= stylesheet_link_tag "posts_index.css", media: "all" %>
+<head>
+  <%= stylesheet_link_tag "posts_index.css", media: "all" %>
+  <%= stylesheet_link_tag "leaflet.css", media: "all" %>
+  <script src="../app/assets/leaflet/leaflet.js"></script>
+
+</head>
 
 
-
-<div class="post-list">
-    <% @posts.each do |post| %>
-        <div class="post-item">
+<body>
+    <div class="post-list">
+        <% @posts.each do |post| %>
             <%= link_to post_path(post), class: "post-link" do %>
-                <h3>投稿ID:<%= post.id %>|ユーザーネーム:<%=post.user.username%></h3>
-                <h2>住所・場所</h2>
-                <span class="post-title"><%= post.title %></span>
-                <h2>評価</h2>
-                <% post.ratings.each do |rating| %>
-                    <p>⭐️<%= rating.value %></p>
-                <% end %>
-                
-                <% if post.image.attached? %>
-                    <h2>画像</h2>
-                    <%= image_tag post.image %>
-                <% end %>
+                <div class="post-item">
+                    <h3>投稿ID:<%= post.id %>|ユーザーネーム:<%=post.user.username%></h3>
+                    <h2>住所・場所</h2>
+                    <span class="post-title"><%= post.title %></span>
+                    <h2>評価</h2>
+                    <% post.ratings.each do |rating| %>
+                        <p>⭐️<%= rating.value %></p>
+                    <% end %>
+                    
+                    <% if post.image.attached? %>
+                        <h2>画像</h2>
+                        <%= image_tag post.image %>
+                    <% end %>
 
+                    <% if post.user == current_user %>
+                        <%= button_to "削除", post_path(post), method: :delete, class: "delete-button" %>
+                    <% end %>
+
+                </div>
             <% end %>
-            <% if post.user == current_user %>
-                <%= button_to "削除", post_path(post), method: :delete, class: "delete-button" %>
-            <% end %>
-        </div>
-    <% end %>
-</div>
+        <% end %>
+    </div>
+</body>
+<div class="leaflet-container" data-controller="map" data-target="map.placeholder" style="height: 500px; width: 500px;"></div>
